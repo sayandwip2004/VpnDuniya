@@ -1,0 +1,37 @@
+[versions]
+agp = "8.5.0"                      # Android Gradle Plugin
+appcompat = "1.6.1"
+desugar_jdk_libs = "2.0.4"
+material = "1.11.0"
+activity = "1.8.2"
+constraintlayout = "2.1.4"
+recyclerview = "1.3.2"
+cardview = "1.0.0"
+fragment = "1.6.2"
+preference = "1.2.1"
+wireguard = "1.0.20250531"
+gson = "2.10.1"
+lottie = "6.3.0"
+junit = "4.13.2"
+extJunit = "1.1.5"
+espresso = "3.5.1"
+
+[libraries]
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
+wireguard-tunnel = { group = "com.wireguard.android", name = "tunnel", version.ref = "wireguard" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "extJunit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WireVPN</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connecting">Connecting…</string>
+    <string name="disconnecting">Disconnecting…</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_error">Connection Error</string>
+    <string name="select_server">Select Server</string>
+    <string name="vpn_notification_title">WireVPN Active</string>
+    <string name="vpn_notification_text">Your connection is protected</string>
+    <string name="vpnduniya">VpnDuniya</string>
+    <string name="todo">TODO</string>
+    <string name="text">🇸🇬</string>
+    <string name="selected_server">Selected Server</string>
+    <string name="singapore">Singapore</string>
+    <string name="sg">SG</string>
+    <string name="select_servertext">Select server</string>
+    <string name="vpn_shield">VPN Shield</string>
+    <string name="tap_connect_to_secure_your_connection">Tap connect to secure your connection</string>
+    <string name="disconnected">Disconnected</string>
+</resources>

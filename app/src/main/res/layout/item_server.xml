@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- Bind a Server object directly to this row -->
+        <variable
+            name="server"
+            type="com.wirevpn.app.models.Server" />
+
+        <!-- Whether this row is currently selected -->
+        <variable
+            name="isSelected"
+            type="boolean" />
+
+        <!-- Click handler passed in from the adapter -->
+        <variable
+            name="clickHandler"
+            type="com.wirevpn.app.adapters.ServerAdapter.OnServerClickListener" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="@{() -> clickHandler.onServerClick(server, 0)}"
+        app:cardCornerRadius="14dp"
+        app:cardBackgroundColor="@color/card_bg"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+            <!-- Selected indicator bar: visible only when isSelected == true -->
+            <View
+                android:id="@+id/view_selected_indicator"
+                android:layout_width="4dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_selected_indicator"
+                android:layout_marginEnd="12dp"
+                android:visibility="@{isSelected ? View.VISIBLE : View.GONE}"/>
+
+            <!-- Flag emoji bound directly from server.flagEmoji -->
+            <TextView
+                android:id="@+id/tv_server_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{server.flagEmoji}"
+                android:textSize="26sp"
+                android:layout_marginEnd="14dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_server_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{server.name}"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_country_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{server.countryCode}"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Ping display bound from server.pingDisplay -->
+            <TextView
+                android:id="@+id/tv_ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{server.pingDisplay}"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginEnd="12dp" />
+
+            <!-- Checkmark: visible only when isSelected == true -->
+            <ImageView
+                android:id="@+id/iv_selected"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_check_circle"
+                app:tint="@color/accent_primary"
+                android:visibility="@{isSelected ? View.VISIBLE : View.GONE}"
+                android:contentDescription="Selected" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
